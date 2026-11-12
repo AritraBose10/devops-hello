@@ -1,0 +1,10 @@
+# Render Blueprint: infrastructure as code for the free web service.
+# Render dashboard -> New -> Blueprint -> pick this repo.
+# plan: free is essential: without it Render picks a paid plan.
+services:
+  - type: web
+    name: devops-hello
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    autoDeployTrigger: checksPass   # deploy only after GitHub CI passes

@@ -8,7 +8,8 @@ Demo app for the DevOps practical class *Code to Container to Cloud*.
 | `tests/test_app.py` | Unit test run by CI |
 | `Dockerfile` | Container image (non-root user, gunicorn on port 8080) |
 | `.github/workflows/ci.yml` | Tests and builds the image on every push and pull request |
-| `rehearse.sh` | Instructor only: deploys to Cloud Run from Cloud Shell |
+| `render.yaml` | Render Blueprint: deploys the free web service |
+| `k8s-demo.sh` | Instructor only: local Kubernetes demo with kind, inside a Codespace |
 
 ## Run locally
 
@@ -18,9 +19,7 @@ python -m pytest -q
 python -m flask --app app run --port 8080
 ```
 
-## Instructor rehearsal (Cloud Shell)
+## Instructor rehearsal (no credit card needed)
 
-```bash
-git clone https://github.com/YOUR-USER/devops-hello && cd devops-hello
-bash rehearse.sh YOUR-PROJECT-ID
-```
+1. **Render:** sign in at render.com with GitHub, then New -> Blueprint -> this repo. Open the `onrender.com` URL it gives.
+2. **Kubernetes:** open this repo in a Codespace and run `bash k8s-demo.sh`.
